@@ -70,7 +70,7 @@
         tools:layout_editor_absoluteY="520dp" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/dateText"
         android:layout_width="346dp"
         android:layout_height="48dp"
         android:fontFamily="@font/inter_bold"
