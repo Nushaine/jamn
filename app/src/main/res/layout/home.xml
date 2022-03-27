@@ -1,74 +1,143 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:orientation="vertical"
+    tools:context=".MainActivity2">
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="282dp"
-        android:layout_height="52dp"
-        android:fontFamily="@font/inter"
-        android:text="100% Privately"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.248"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.107" />
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/social_media_monochromatic_1"
-        tools:layout_editor_absoluteX="19dp"
-        tools:layout_editor_absoluteY="125dp" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="343dp"
-        android:layout_height="39dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="4dp"
         android:fontFamily="@font/inter_bold"
         android:text="Write Your Thoughts"
         android:textSize="34sp"
         android:textStyle="bold"
-        tools:layout_editor_absoluteX="35dp"
-        tools:layout_editor_absoluteY="34dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.426"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.037" />
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="346dp"
-        android:layout_height="48dp"
-        android:text="Create Account"
-        app:backgroundTint="#5AC6C6"
-        tools:layout_editor_absoluteX="32dp"
-        tools:layout_editor_absoluteY="654dp" />
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="278dp"
+        android:layout_height="37dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="4dp"
+        android:fontFamily="@font/inter"
+        android:text="100% Privately"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.224"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="343dp"
+        android:layout_height="359dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="2dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.421"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintVertical_bias="0.044"
+        app:srcCompat="@drawable/social_media_monochromatic_1" />
 
     <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/usernameBox"
         android:layout_width="346dp"
         android:layout_height="48dp"
-        android:fontFamily="@font/inter"
+        android:layout_marginTop="4dp"
         android:background="@color/black"
-        android:hint="Password"
-        android:textAlignment="center"
-        app:backgroundTint="#F2F4F7"
-        tools:layout_editor_absoluteX="32dp"
-        tools:layout_editor_absoluteY="577dp" />
-
-    <com.google.android.material.textfield.TextInputEditText
-        android:layout_width="346dp"
-        android:layout_height="48dp"
         android:fontFamily="@font/inter"
-        android:background="@color/black"
+        android:layout_gravity="center_horizontal"
         android:hint="Username"
         android:textAlignment="center"
         app:backgroundTint="#F2F4F7"
-        tools:layout_editor_absoluteX="32dp"
-        tools:layout_editor_absoluteY="519dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageView" />
+
+    <TextView
+        android:id="@+id/usernameError"
+        android:layout_width="345dp"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:layout_gravity="center_horizontal"
+        android:textColor="#FF1100"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/usernameBox" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/passwordBox"
+        android:layout_width="346dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="4dp"
+        android:background="@color/black"
+        android:fontFamily="@font/inter"
+        android:layout_gravity="center_horizontal"
+        android:hint="Password"
+        android:textAlignment="center"
+        app:backgroundTint="#F2F4F7"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.507"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/usernameError" />
+
+    <TextView
+        android:id="@+id/passwordError"
+        android:layout_width="346dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text=""
+        android:layout_gravity="center_horizontal"
+        android:textColor="#FF1100"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/passwordBox" />
+
+    <Button
+        android:id="@+id/loginButton"
+        android:layout_width="346dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="5dp"
+        android:text="Login"
+        android:onClick="onClick3"
+        android:layout_gravity="center_horizontal"
+        app:backgroundTint="#5AC6C6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/passwordError" />
+
+    <Button
+        android:id="@+id/createAccountButton"
+        android:layout_width="346dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="2dp"
+        android:text="Create Account"
+        android:onClick="onClick2"
+        android:layout_gravity="center_horizontal"
+        app:backgroundTint="#5AC6C6"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.507"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/loginButton"
+        app:layout_constraintVertical_bias="0.236" />
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
