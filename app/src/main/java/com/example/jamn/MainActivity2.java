@@ -47,6 +47,7 @@ public class MainActivity2 extends AppCompatActivity {
             ((TextView) findViewById(R.id.usernameError2)).setText("Username Must Be At Least Eight Characters");
         } else {
             ((TextView) findViewById(R.id.usernameError2)).setText("");
+            usernameCheck = true;
         }
 
 
@@ -70,12 +71,13 @@ public class MainActivity2 extends AppCompatActivity {
             ((TextView) findViewById(R.id.emailError)).setText("Invalid Email");
         } else {
             ((TextView) findViewById(R.id.emailError)).setText("");
+            emailCheck = true;
         }
 
 
         //if there is no issue with the new username, new email, new password then they are set as the username, password, email
         //this should also take the user to the login/home page
-        if (passwordCheck == true || usernameCheck == true || emailCheck == true) {
+        if (passwordCheck == true && usernameCheck == true && emailCheck == true) {
 
             email = newEmail;
             username = newUsername;
@@ -128,7 +130,7 @@ public class MainActivity2 extends AppCompatActivity {
 
 
         //if both username and password matches, then the user will login
-        if (newPassword.equals(password) || newUsername.equals(username)) {
+        if (newPassword.equals(password) && newUsername.equals(username)) {
 
             //at this point, login is successful and should take user to next page
             showSnackbar(view, "Login Successful", Snackbar.LENGTH_LONG);
