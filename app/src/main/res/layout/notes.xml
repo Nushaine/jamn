@@ -16,7 +16,8 @@
         android:layout_marginLeft="32dp"
         android:layout_marginTop="32dp"
         android:layout_marginRight="32dp"
-        android:gravity="center">
+        android:gravity="center"
+        android:onClick="onClick">
 
         <TextView
             android:id="@+id/dateText"
@@ -46,46 +47,52 @@
         android:layout_marginLeft="32dp"
         android:layout_marginTop="32dp"
         android:layout_marginRight="32dp"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:onClick="onClick">
 
         <ImageView
             android:id="@+id/veryHappy"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_weight="1"
-            app:srcCompat="@drawable/happy" />
+            app:srcCompat="@drawable/happy"
+            android:onClick="onClick"/>
 
         <ImageView
             android:id="@+id/happy"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_weight="1"
-            app:srcCompat="@drawable/kindahappy" />
+            app:srcCompat="@drawable/kindahappy"
+            android:onClick="onClick"/>
 
         <ImageView
             android:id="@+id/normal"
             android:layout_width="40dp"
             android:layout_weight="1"
             android:layout_height="40dp"
-            app:srcCompat="@drawable/normal" />
+            app:srcCompat="@drawable/normal"
+            android:onClick="onClick"/>
 
         <ImageView
             android:id="@+id/sad"
             android:layout_width="40dp"
             android:layout_weight="1"
             android:layout_height="40dp"
-            app:srcCompat="@drawable/notsad" />
+            app:srcCompat="@drawable/notsad"
+            android:onClick="onClick"/>
 
         <ImageView
             android:id="@+id/verySad"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_weight="1"
-            app:srcCompat="@drawable/sad" />
+            app:srcCompat="@drawable/sad"
+            android:onClick="onClick"/>
     </LinearLayout>
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/notes"
+        android:id="@+id/notesInput"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="32dp"
@@ -95,12 +102,14 @@
         android:hint="Tap to start writing" />
 
     <LinearLayout
+        android:id="@+id/calendarContainer"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:layout_marginBottom="16dp"
         android:layout_weight="1"
         android:gravity="end"
+        android:onClick="onClick"
         android:orientation="horizontal">
 
         <RelativeLayout
@@ -120,6 +129,7 @@
                 android:layout_alignParentTop="true"
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="23dp"
+                android:onClick="onClick"
                 app:backgroundTint="#F2F4F7"
                 app:cornerRadius="70dp" />
 
