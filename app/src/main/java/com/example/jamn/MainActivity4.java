@@ -1,5 +1,9 @@
 package com.example.jamn;
 
+import android.content.SharedPreferences;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.widget.*;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.AlertDialog;
@@ -8,19 +12,10 @@ import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
-import android.widget.Button;
-import android.widget.DatePicker;
-import android.widget.EditText;
-import android.widget.ImageView;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.android.material.textfield.TextInputEditText;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Calendar;
-import java.util.HashMap;
+import java.util.*;
 
 public class MainActivity4 extends AppCompatActivity  {
 
@@ -34,6 +29,7 @@ public class MainActivity4 extends AppCompatActivity  {
     private ImageView verySad;
     private HashMap<String, String[]> notes = new HashMap<String, String[]>();
     private String date;
+    private SharedPreferences sp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +48,8 @@ public class MainActivity4 extends AppCompatActivity  {
         sad = findViewById(R.id.sad);
         verySad = findViewById(R.id.verySad);
 
+        // initialize SharePreferences to variable sp
+        sp = getSharedPreferences("MyUserPrefs", Context.MODE_PRIVATE);
 
         // adding a function to listen for changes in focus, then update the HashMap
         inputText.setOnFocusChangeListener(new TextInputEditText.OnFocusChangeListener() {
@@ -67,6 +65,15 @@ public class MainActivity4 extends AppCompatActivity  {
                     String currentText = inputText.getText().toString();
                     currentKey[0] = currentText;
                     notes.put(date, currentKey);
+
+                    // set Shared Preferences db
+                    String inputTextStr = inputText.getText().toString();
+                    SharedPreferences.Editor editor = sp.edit();
+
+                    // update SharedPreferences db
+                    editor.putString("notes", inputTextStr);
+                    editor.commit();
+                    Toast.makeText(MainActivity4.this, "Data Saved", Toast.LENGTH_LONG).show();
                 }
             }
         });
@@ -81,6 +88,12 @@ public class MainActivity4 extends AppCompatActivity  {
             notes.put(date, empty);
         }
 
+        // initializing SharePreferences from FocusListener focusing
+        SharedPreferences sp = getApplicationContext().getSharedPreferences("MyUserPrefs", Context.MODE_PRIVATE);
+        String note = sp.getString("notes", "");
+
+        // store note written
+        inputText.setText(note);
     }
 
     // returns whatever value was selected in datepicker
@@ -162,7 +175,7 @@ public class MainActivity4 extends AppCompatActivity  {
 
     }
 
-    // lose focus from edittext
+    // lose focus from editText
     public void onClick(View view) {
         int clickedID = view.getId();
         switch (clickedID){
