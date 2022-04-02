@@ -29,11 +29,8 @@ public class MainActivity2 extends AppCompatActivity {
 
         Boolean passwordCheck = false;
         Boolean usernameCheck = false;
-        Boolean emailCheck = false;
 
         //these are to get the text from the boxes
-        EditText emailView = (EditText) findViewById(R.id.emailBox);
-        String newEmail = emailView.getText().toString();
 
         EditText usernameView = (EditText) findViewById(R.id.usernameBox2);
         String newUsername = usernameView.getText().toString();
@@ -66,20 +63,12 @@ public class MainActivity2 extends AppCompatActivity {
         }
 
 
-        //to check the email
-        if (Registration.checkEmail(newEmail) == false) {
-            ((TextView) findViewById(R.id.emailError)).setText("Invalid Email");
-        } else {
-            ((TextView) findViewById(R.id.emailError)).setText("");
-            emailCheck = true;
-        }
 
 
         //if there is no issue with the new username, new email, new password then they are set as the username, password, email
         //this should also take the user to the login/home page
-        if (passwordCheck == true && usernameCheck == true && emailCheck == true) {
+        if (passwordCheck == true && usernameCheck == true) {
 
-            email = newEmail;
             username = newUsername;
             password = newPassword;
             showSnackbar(view, "Account Created", Snackbar.LENGTH_LONG);
