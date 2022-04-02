@@ -2,6 +2,7 @@ package com.example.jamn;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -121,8 +122,14 @@ public class MainActivity2 extends AppCompatActivity {
         //if both username and password matches, then the user will login
         if (newPassword.equals(password) && newUsername.equals(username)) {
 
+
             //at this point, login is successful and should take user to next page
             showSnackbar(view, "Login Successful", Snackbar.LENGTH_LONG);
+
+
+
+            Intent intent = new Intent(this, MainActivity4.class);
+            startActivity(intent);
         }
     }
 }
