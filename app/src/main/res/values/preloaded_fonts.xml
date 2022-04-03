@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <array name="preloaded_fonts" translatable="false">
-<<<<<<< HEAD
+
         <item>@font/inter_black</item>
-=======
         <item>@font/inter</item>
->>>>>>> a6bb3cd8e5219c5fa1ccbe198d19b7c47ccd6c2d
         <item>@font/inter_bold</item>
     </array>
 </resources>

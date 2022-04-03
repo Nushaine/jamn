@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">JAMN</string>
+    <string name="_100_privately">100% Privately</string>
+    <string name="write_your_thoughts">Write Your Thoughts</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="login">Login</string>
+    <string name="todo">TODO</string>
+    <string name="wegooo">wegooo</string>
 </resources>

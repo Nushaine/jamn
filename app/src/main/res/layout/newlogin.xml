@@ -40,7 +40,7 @@
         tools:layout_editor_absoluteY="34dp" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/createAccountButton"
         android:layout_width="346dp"
         android:layout_height="48dp"
         android:text="Login"
