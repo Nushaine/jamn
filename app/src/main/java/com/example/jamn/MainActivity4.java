@@ -62,6 +62,7 @@ public class MainActivity4 extends AppCompatActivity  {
 
                     // update hashmap at current key
                     String[] currentKey = notes.get(date);
+                    Set<String> set = new HashSet<>(Arrays.asList(currentKey));
                     String currentText = inputText.getText().toString();
                     currentKey[0] = currentText;
                     notes.put(date, currentKey);
@@ -71,7 +72,7 @@ public class MainActivity4 extends AppCompatActivity  {
                     SharedPreferences.Editor editor = sp.edit();
 
                     // update SharedPreferences db
-                    editor.putString("notes", inputTextStr);
+                    editor.putStringSet("notes", set);
                     editor.commit();
                     Toast.makeText(MainActivity4.this, "Data Saved", Toast.LENGTH_LONG).show();
                 }
